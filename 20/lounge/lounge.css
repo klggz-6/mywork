@@ -1,12 +1,11 @@
 body {
 	font-size: small; 
-	font-family: Verdana， Helvetica， Arial;
+	font-family: Verdana, Helvetica, Arial;
 }
 
 h1, h2 {
 	color: #007e7e; 
 }
-
 h1 {
 	font-size: 1.5em;
 }
@@ -51,3 +50,38 @@ h2 {
 
 	text-align:          center;  /* 文本剧中对齐 */
 }
+.elixirs{
+  line-height: 1em;
+}
+.elixirs{
+  line-height: 1;
+}
+.elixirs h2{
+  color: #000;
+}
+.elixirs > h3{
+  color: red;
+}
+.cd {
+	font-style: italic;
+}
+
+.artist {
+	font-weight: bold;
+}
+.elixirs a:link{
+  color: #007e7e;
+}
+.elixirs a:visited{
+  color: #333333;
+}
+.elixirs a:hover{
+  background: #f88396;
+  color: #0d5353;
+}
+h1, h2 {
+  font-weight: 600;
+}
+  h1 {
+    font-weight: 200;
+  }
