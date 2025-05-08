@@ -1,4 +1,4 @@
-<h2 class="block__title">Latest research news</h2>
+                                                        <h2 class="block__title">Latest research news</h2>
                                                         <div>
                                                             <div class="layout-container article-sub-list view view-research-results view-id-research_results view-display-id-latest_research_news js-view-dom-id-70dbcd1e78bbda2200bfe897d95b9242d708194d6e4265cb0d213f2e8818f607">
                                                                 <div class="view-content">

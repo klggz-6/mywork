@@ -1,0 +1,54 @@
+
+.sectioning-block > h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #00205b;
+  font: 500 20px / 1.25 "Lora", "Noto Sans JP", serif;
+}
+h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+用户代理样式表
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+body {
+  color: #101214;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.54;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+.sectioning-block > h2::before {
+  content: none;
+}
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+.sectioning-block > h2::after {
+  content: none;
+}
+*, ::after, ::before {
+  box-sizing: inherit;
+}
