@@ -1,0 +1,208 @@
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+.node-list__title {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+}
+h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+a.node-list__link {
+  display: block;
+  text-decoration: none;
+  color: #101214;
+}
+a {
+  color: #165eb1;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+}
+
+li {
+  text-align: -webkit-match-parent;
+}
+.article-sub-list__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex
+;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+ul {
+  list-style-type: disc;
+}
+body {
+  color: #101214;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.54;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+.article-sub-list__items .external-link .field--name-title::after {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 3px;
+  content: "";
+  vertical-align: super;
+  background: transparent url(/themes/custom/camphor/css/../images/icon-external-link.svg) no-repeat;
+  line-height: 1;
+}
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+.more-link > a, .more-link > a:visited {
+  color: #fff;
+}
+@media (hover: hover) {
+  .more-link > a {
+      transition-property: background-color, border-color, color;
+  }
+}
+@media (hover: hover) {
+  .more-link > a, .more-link > a::before, .more-link > a::after {
+      transition-timing-function: ease;
+      transition-duration: 0.3s;
+  }
+}
+.more-link > a {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  color: #fff;
+  background-color: #fff;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 248px;
+  height: 40px;
+  text-decoration: none;
+  border: 1px solid #002872;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 40px;
+}
+a:visited {
+  color: #6e306e;
+}
+a {
+  color: #165eb1;
+}
+a {
+  background-color: transparent;
+}
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+用户代理样式表
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.more-link {
+  margin-top: 24px;
+  text-align: center;
+}
+.more-link {
+  display: block;
+  text-align: right;
+}
+body {
+  color: #101214;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.54;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+@media (hover: hover) {
+  .more-link > a::before, .more-link > a::after {
+      transition-property: width;
+  }
+}
+@media (hover: hover) {
+  .more-link > a, .more-link > a::before, .more-link > a::after {
+      transition-timing-function: ease;
+      transition-duration: 0.3s;
+  }
+}
+.more-link > a::before {
+  right: 0;
+}
+.more-link > a::before, .more-link > a::after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  display: block;
+  width: 50.1%;
+  height: 100%;
+  margin: 0;
+  content: "";
+  background-color: #002872;
+  background-image: none;
+}
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+@media (hover: hover) {
+  .more-link > a::before, .more-link > a::after {
+      transition-property: width;
+  }
+}
+@media (hover: hover) {
+  .more-link > a, .more-link > a::before, .more-link > a::after {
+      transition-timing-function: ease;
+      transition-duration: 0.3s;
+  }
+}
+.more-link > a::after {
+  left: 0;
+}
+.more-link > a::before, .more-link > a::after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  display: block;
+  width: 50.1%;
+  height: 100%;
+  margin: 0;
+  content: "";
+  background-color: #002872;
+  background-image: none;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
+}
