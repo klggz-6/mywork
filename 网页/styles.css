@@ -1,3 +1,64 @@
+/* 假设父容器是 body 或某个 div，添加以下样式 */
+body {
+  display: flex;
+  flex-direction: column; /* 设置为垂直排列 */
+  justify-content: flex-start; /* 内容从顶部开始排列 */
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.block__title {
+  text-align: center;
+  color: #00205b;
+  margin-bottom: 20px; /* 添加下边距，与内容保持距离 */
+}
+
+.article-sub-list__items {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  overflow-x: auto;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.article-sub-list__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px; /* 恢复固定宽度 */
+  height: 200px; /* 恢复固定高度 */
+  flex-shrink: 0;
+}
+
+.node-list__content {
+  text-align: center;
+  width: 100%; /* 确保内容宽度适应容器 */
+}
+
+.article-sub-list__item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.node-list__content {
+  text-align: center;
+  width: 100%;
+  font-size: 14px; /* 缩小字体大小 */
+}
+
+.block__title {
+  text-align: center;
+  color: #00205b; /* 移除 font-weight: bold */
+}
 
 .sectioning-block > h2 {
   margin: 0;
@@ -7,48 +68,39 @@
   margin-bottom: 16px;
   text-align: center;
   color: #00205b;
-  font: 500 20px / 1.25 "Lora", "Noto Sans JP", serif;
+  font: 500 20px / 1.25 "Lora", "Noto Sans JP", serif; /* 移除 font-weight: bold */
 }
-h2, h3, h4, h5, h6 {
+.node-list__title {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: 6px;
+  font-size: 15px;
   font-weight: 500;
-}
-*, ::after, ::before {
-  box-sizing: inherit;
-}
-用户代理样式表
-h2 {
-  display: block;
-  font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-  unicode-bidi: isolate;
-}
-body {
-  color: #101214;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.54;
-}
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  line-height: 24px;
+  color: black; /* 设置字体为黑色 */
 }
 
-.sectioning-block > h2::before {
-  content: none;
+.node-list__link {
+  text-decoration: none; /* 默认无下划线 */
+  color: black; /* 设置字体为黑色 */
 }
-*, ::after, ::before {
-  box-sizing: inherit;
+
+.node-list__link:hover {
+  text-decoration: underline; /* 鼠标悬停时显示黑色下划线 */
+  text-decoration-color: black; /* 下划线颜色为黑色 */
 }
-.sectioning-block > h2::after {
-  content: none;
+
+.more-link a {
+  border: 2px solid #00205b; /* 实心边框 */
+  padding: 8px 16px; /* 内边距 */
+  border-radius: 0; /* 直角边框 */
+  text-decoration: none; /* 移除下划线 */
+  color: #00205b; /* 字体颜色 */
+  display: inline-block; /* 确保边框包裹文字 */
+  background-color: #00205b; /* 背景颜色 */
+  color: white; /* 文字颜色 */
+  width: 100%;
+
 }
-*, ::after, ::before {
-  box-sizing: inherit;
-}
+
