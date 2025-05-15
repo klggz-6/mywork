@@ -209,7 +209,7 @@ body {
       transition-duration: 0.3s;
   }
 }
-.more-link > a::before, .more-link > a::after {
+.more-link > a::before {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -279,32 +279,11 @@ body {
 }
 
 .node-list__link {
+  text-decoration: none; /* 默认无下划线 */
   color: black;
   transition: transform 0.3s ease;
 }
 
-.node-list__link:hover {
-  text-decoration-color: black;
-  transform: scale(1.02);
-}
-
-.node-list__content {
-  text-align: center;
-  width: 100%;
-  font-size: 14px; /* 缩小字体大小 */
-}
-
-/* 重复定义的部分，合并前 */
-.node-list__content {
-  text-align: center;
-  width: 100%; /* 确保内容宽度适应容器 */
-}
-
-.node-list__content {
-  text-align: center;
-  width: 100%;
-  font-size: 14px; /* 缩小字体大小 */
-}
 
 /* 合并建议 */
 .node-list__content {
@@ -341,6 +320,12 @@ body {
   color: black;
 }
 
+.node-list__link {
+  text-decoration: none; /* 默认无下划线 */
+  color: black; /* 设置字体为黑色 */
+}
+
+
 
 @media (hover: hover) {
   .more-link > a {
@@ -374,14 +359,7 @@ body {
   margin-top: 24px;
   text-align: center;
 }
-body {
-  color: #101214;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 18px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.54;
-}
+
 @media (hover: hover) {
   .more-link > a, .more-link > a::before, .more-link > a::after {
       transition-timing-function: ease;
