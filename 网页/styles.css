@@ -6,46 +6,63 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  color: #101214;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.54;
+  background-color: #f0f0f0cc; 
 }
 
 .block__title {
   text-align: center;
   color: #00205b;
-  margin-bottom: 20px; /* 添加下边距，与内容保持距离 */
+  /* 增大字体大小，这里从默认调整到 32px */
+  font-size: 32px; 
+  margin-bottom: 20px; 
+}
+
+.sectioning-block h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: 0;
+  margin-bottom: 26px;
+  text-align: center;
+  color: #00205b;
+  /* 修正字体声明并增大字体大小，这里调整到 40px */
+  font: 500 20px / 1.25 "Lora", "Noto Sans JP"
+}
+.node-list__title {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: 6px;
+  /* 增大字体大小，这里从 15px 调整到 18px */
+  font-size: 18px; 
+  font-weight: 650; 
+  line-height: 24px;
+  color: black;
 }
 
 .article-sub-list__items {
-
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex
-;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-
-.article-sub-list__item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* 修改为从顶部开始排列 */
-  justify-content: flex-start; 
-  background-color: white;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px; 
-  height: 450px; 
-  flex-shrink: 0;
-  margin: 10px; 
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .node-list__content {
   text-align: center;
-  width: 100%; /* 确保内容宽度适应容器 */
+  width: 100%;
+  font-size: 14px; 
 }
 
 .article-sub-list__item img {
@@ -71,52 +88,12 @@ body {
 }
 
 .node-list__link:hover {
-  text-decoration: underline;
-  text-decoration-color: black;
+  text-decoration: none; /* 移除悬停时的下划线 */
   transform: scale(1.02); /* 鼠标悬停时放大文字 */
 }
 
-.node-list__content {
-  text-align: center;
-  width: 100%;
-  font-size: 14px; /* 缩小字体大小 */
-}
 
-/* 重复定义的部分，合并前 */
-.node-list__content {
-  text-align: center;
-  width: 100%; /* 确保内容宽度适应容器 */
-}
 
-.node-list__content {
-  text-align: center;
-  width: 100%;
-  font-size: 14px; /* 缩小字体大小 */
-}
-
-/* 合并建议 */
-.node-list__content {
-  text-align: center;
-  width: 100%;
-  font-size: 14px; 
-}
-
-.block__title {
-  text-align: center;
-  color: #00205b; /* 移除 font-weight: bold */
-}
-
-.sectioning-block h2 {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  margin-top: 0;
-  margin-bottom: 25px;
-  text-align: center;
-  color: #00205b;
-  /* 增大字体大小，这里调整到 36px，你可按需修改 */
-  font: 500 50px 
-}
 .node-list__title {
   margin: 0;
   padding: 0;
@@ -129,36 +106,22 @@ body {
   color: black;
 }
 
-.node-list__link {
-  text-decoration: none; /* 默认无下划线 */
-  color: black; /* 设置字体为黑色 */
-  transition: transform 0.3s ease;
-}
-
-.node-list__link:hover {
-  text-decoration: none; /* 移除悬停时的下划线 */
-  text-decoration-color: black;
-  transform: scale(1.02);
-}
-
 @media (hover: hover) {
   .more-link > a {
-      transition-property: background-color, border-color, color;
+    transition-property: background-color, border-color, color;
   }
-}
-@media (hover: hover) {
   .more-link > a, .more-link > a::before, .more-link > a::after {
-      transition-timing-function: ease;
-      transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
   }
 }
+
 .more-link > a {
   position: relative;
   z-index: 0;
   display: inline-block;
   color: #fff;
   background-color: #fff;
-  display: inline-block;
   box-sizing: border-box;
   width: 100%;
   max-width: 248px;
@@ -169,264 +132,27 @@ body {
   font-weight: 500;
   line-height: 40px;
 }
-.more-link {
-  margin-top: 24px;
-  text-align: center;
-}
-body {
-  color: #101214;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 18px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.54;
-}
-@media (hover: hover) {
-  .more-link > a, .more-link > a::before, .more-link > a::after {
-      transition-timing-function: ease;
-      transition-duration: 0.3s;
-  }
-}
-.more-link > a::before {
-  right: 0;
-}
 
-.more-link > a::before, .more-link > a::after {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  display: block;
-  width: 50.1%;
-  height: 100%;
-  margin: 0;
-  content: "";
-  background-color: #002872;
-  background-image: none;
-}
-@media (hover: hover) {
-  .more-link > a, .more-link > a::before, .more-link > a::after {
-      transition-timing-function: ease;
-      transition-duration: 0.3s;
-  }
-}
-.more-link > a::before {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  display: block;
-  width: 50.1%;
-  height: 100%;
-  margin: 0;
-  content: "";
-  background-color: #002872;
-  background-image: none;
-}
-body {
-  display: flex;
-  flex-direction: column; 
-  justify-content: flex-start; 
-  align-items: center; 
-  min-height: 100vh; 
-  margin: 0;
-  color: #101214;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.54;
-  background-color: #f0f0f0cc; 
-}
-
-.article-sub-list__items {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  max-width: 1200px;
-  box-sizing: border-box;
-  padding: 0 20px;
-}
-
-.article-sub-list__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: white;
-  padding: 0 12px 12px 12px; /* 上边距设为 0，其他边距保持不变 */
-  border: 1px solid #ddd;
-  border-radius: 0;
-  width: calc(25% - 20px);
-  height: auto;
-  flex-shrink: 0;
-  margin: 10px;
-  box-sizing: border-box;
-}
-
-.article-sub-list__item img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 0;
-  transition: transform 0.3s ease; /* 添加过渡效果 */
-}
-
-.article-sub-list__item img:hover {
-  transform: scale(1.05); /* 鼠标悬停时放大图片 */
-}
-
-.node-list__link {
-  text-decoration: none; /* 默认无下划线 */
-  color: black;
-  transition: transform 0.3s ease;
-}
-
-
-/* 合并建议 */
-.node-list__content {
-  text-align: center;
-  width: 100%;
-  font-size: 14px; 
-}
-
-.block__title {
-  text-align: center;
-  color: #00205b; /* 移除 font-weight: bold */
-}
-
-.sectioning-block h2 {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  margin-top: 0;
-  margin-bottom: 25px;
-  text-align: center;
-  color: #00205b;
-  /* 增大字体大小，这里调整到 36px，你可按需修改 */
-  font: 500 36px / 1.25 "Lora", "Noto Sans JP", serif; 
-}
-.node-list__title {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  margin-top: 6px;
-  font-size: 15px;
-  /* 加粗字体 */
-  font-weight: 650; /* 从 500 调整为 700 */
-  line-height: 24px;
-  color: black;
-}
-
-.node-list__link {
-  text-decoration: none; /* 默认无下划线 */
-  color: black; /* 设置字体为黑色 */
-}
-
-
-
-@media (hover: hover) {
-  .more-link > a {
-      transition-property: background-color, border-color, color;
-  }
-}
-@media (hover: hover) {
-  .more-link > a, .more-link > a::before, .more-link > a::after {
-      transition-timing-function: ease;
-      transition-duration: 0.3s;
-  }
-}
-.more-link > a {
-  position: relative;
-  z-index: 0;
-  display: inline-block;
-  color: #fff;
-  background-color: #fff;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 248px;
-  height: 40px;
-  text-decoration: none;
-  border: 1px solid #002872;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 40px;
-}
 .more-link {
   margin-top: 24px;
   text-align: center;
 }
 
-@media (hover: hover) {
-  .more-link > a, .more-link > a::before, .more-link > a::after {
-      transition-timing-function: ease;
-      transition-duration: 0.3s;
-  }
+.more-link > a::before, .more-link > a::after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  display: block;
+  width: 50.1%;
+  height: 100%;
+  margin: 0;
+  content: "";
+  background-color: #002872;
+  background-image: none;
 }
+
 .more-link > a::before {
   right: 0;
-}
-
-.more-link > a::before, .more-link > a::after {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  display: block;
-  width: 50.1%;
-  height: 100%;
-  margin: 0;
-  content: "";
-  background-color: #002872;
-  background-image: none;
-}
-@media (hover: hover) {
-  .more-link > a, .more-link > a::before, .more-link > a::after {
-      transition-timing-function: ease;
-      transition-duration: 0.3s;
-  }
-}
-.more-link > a::before, .more-link > a::after {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  display: block;
-  width: 50.1%;
-  height: 100%;
-  margin: 0;
-  content: "";
-  background-color: #002872;
-  background-image: none;
-}
-body {
-  display: flex;
-  flex-direction: column; 
-  justify-content: flex-start; 
-  align-items: center; 
-  min-height: 100vh; 
-  margin: 0;
-  color: #101214;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.54;
-  background-color: #f0f0f0cc; 
-}
-
-.article-sub-list__items {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  max-width: 1200px;
-  box-sizing: border-box;
-  padding: 0 20px;
 }
 
 .article-sub-list__item {
@@ -465,6 +191,7 @@ body {
     width: calc(100% - 20px);
   }
 }
+
 ul {
   display: block;
   list-style-type: disc;
@@ -475,9 +202,11 @@ ul {
   padding-inline-start: 40px;
   unicode-bidi: isolate;
 }
+
 @media (min-width: 48em) {
   .sectioning-block > h2 {
-      font-size: 24px;
-      line-height: 31px;
+    font-size: 24px;
+    line-height: 31px;
   }
 }
+
