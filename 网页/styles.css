@@ -1,8 +1,8 @@
-/* 假设父容器是 body 或某个 div，添加以下样式 */
+/* 修改 body 样式，减小左右边距相关影响 */
 body {
   display: flex;
-  flex-direction: column; /* 设置为垂直排列 */
-  justify-content: flex-start; /* 内容从顶部开始排列 */
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
   margin: 0;
@@ -12,41 +12,38 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.54;
-  background-color: #f0f0f0cc; 
+  background-color: #a0a0a08e; 
 }
 
 .block__title {
   text-align: center;
   color: #00205b;
-  /* 增大字体大小，这里从默认调整到 32px */
-  font-size: 32px; 
-  margin-bottom: 20px; 
+  font-size: 28px; 
+  margin-bottom: 10px; /* 减少标题底部外边距，可按需调整 */
+  margin-top: 60px;
 }
 
 .sectioning-block h2 {
-  margin: 0;
+  margin: 0 0 26px; /* 合并重复的 margin 设置 */
   padding: 0;
   border: 0;
-  margin-top: 0;
-  margin-bottom: 26px;
   text-align: center;
   color: #00205b;
-  /* 修正字体声明并增大字体大小，这里调整到 40px */
-  font: 500 20px / 1.25 "Lora", "Noto Sans JP"
+  font: 500 20px / 1.25 "Lora", "Noto Sans JP", serif; /* 假设前面添加的字体样式保留 */
 }
+
 .node-list__title {
-  margin: 0;
+  margin: 6px 0 0;
   padding: 0;
   border: 0;
-  margin-top: 6px;
-  /* 增大字体大小，这里从 15px 调整到 18px */
-  font-size: 18px; 
-  font-weight: 650; 
+  font-size: 15px;
+  font-weight: 650;
   line-height: 24px;
   color: black;
 }
 
 .article-sub-list__items {
+  /* 保持原有样式，确保弹性布局 */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -56,7 +53,8 @@ body {
   width: 100%;
   max-width: 1200px;
   box-sizing: border-box;
-  padding: 0 20px;
+  /* 减小左右内边距，假设从 20px 变为 10px */
+  padding: 0 10px; 
 }
 
 .node-list__content {
@@ -73,12 +71,9 @@ body {
   transition: transform 0.3s ease; /* 添加过渡效果 */
 }
 
-.article-sub-list__item:hover img {
-  transform: scale(1.05); /* 悬停时放大图片 */
-}
-
+.article-sub-list__item:hover img,
 .node-list__link:hover ~ img {
-  transform: scale(1.05); /* 悬停在文字超链接时放大图片 */
+  transform: scale(1.10);
 }
 
 .node-list__link {
@@ -92,67 +87,41 @@ body {
   transform: scale(1.02); /* 鼠标悬停时放大文字 */
 }
 
-
-
-.node-list__title {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  margin-top: 6px;
-  font-size: 15px;
-  /* 加粗字体 */
-  font-weight: 650; /* 从 500 调整为 700 */
-  line-height: 24px;
-  color: black;
-}
-
-@media (hover: hover) {
-  .more-link > a {
-    transition-property: background-color, border-color, color;
-  }
-  .more-link > a, .more-link > a::before, .more-link > a::after {
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-  }
-}
-
-.more-link > a {
-  position: relative;
-  z-index: 0;
-  display: inline-block;
-  color: #fff;
-  background-color: #fff;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 248px;
-  height: 40px;
-  text-decoration: none;
-  border: 1px solid #002872;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 40px;
-}
-
 .more-link {
-  margin-top: 24px;
-  text-align: center;
+  position: relative;
+  color: white;
+  background-color: rgb(0, 40, 114); 
+  border: 1px solid rgb(0, 40, 114); 
+  padding: 8px 52px; 
+  border-radius: 0; 
+  display: table; 
+  margin: 20px auto 0; 
+  text-decoration: none; 
+  z-index: 1; 
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 15px;
 }
 
-.more-link > a::before, .more-link > a::after {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  display: block;
-  width: 50.1%;
-  height: 100%;
-  margin: 0;
+.more-link::before {
   content: "";
-  background-color: #002872;
-  background-image: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background-color: white; 
+  transition: width 0.3s ease; 
+  transform: translateX(-50%); 
+  z-index: -1; 
 }
 
-.more-link > a::before {
-  right: 0;
+.more-link:hover::before {
+  width: 100%; 
+}
+
+.more-link:hover {
+  color: rgb(0, 40, 114); 
 }
 
 .article-sub-list__item {
@@ -161,34 +130,40 @@ body {
   align-items: center;
   justify-content: flex-start;
   background-color: white;
-  padding: 12px;
-  border: 1px solid #ddd;
+  padding: 20px; 
   border-radius: 0;
-  /* 移除或注释掉 box-shadow 属性 */
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  width: calc(25% - 20px);
+  /* 进一步减小左右边距，假设变为 5px，调整宽度计算 */
+  width: calc(25% - 10px); 
   height: auto;
   flex-shrink: 0;
-  margin: 10px;
+  /* 左右边距变为 5px */
+  margin: 10px 5px; 
   box-sizing: border-box;
+  overflow: hidden; 
 }
 
-/* 调整不同窗口宽度下的方框宽度 */
+/* 调整不同窗口宽度下的方框宽度和间距 */
+@media (max-width: 1200px) {
+  .article-sub-list__item {
+    width: calc(33.333% - 10px); 
+  }
+}
+
 @media (max-width: 1024px) {
   .article-sub-list__item {
-    width: calc(33.333% - 20px);
+    width: calc(50% - 10px); 
   }
 }
 
 @media (max-width: 768px) {
   .article-sub-list__item {
-    width: calc(50% - 20px);
+    width: calc(100% - 10px); 
   }
 }
 
 @media (max-width: 480px) {
   .article-sub-list__item {
-    width: calc(100% - 20px);
+    width: calc(100% - 40px); 
   }
 }
 
@@ -210,3 +185,24 @@ ul {
   }
 }
 
+/* 为 .node-list__title 添加悬停下划线 */
+.node-list__title:hover {
+  text-decoration: underline;
+}
+
+/* 定义水平线样式 */
+.full-width-line {
+  width: 100%; /* 让线贯穿整行 */
+  border: none; /* 移除默认边框 */
+  border-top: 1px solid rgba(51, 101, 192, 0.445); /* 设置顶部边框作为线，颜色可按需修改 */
+  margin: 40px 0; /* 设置上下外边距，可按需调整 */
+}
+
+/* 移除特定类超链接的默认样式 */
+.full-width-divider {
+  width: 100%; 
+  height: 1px; 
+  background-color: #000; 
+  margin-top: 10px; /* 减少线的顶部外边距，可按需调整 */
+  margin-bottom: 20px; 
+}
