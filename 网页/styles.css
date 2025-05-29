@@ -1,55 +1,62 @@
-/* 修改 body 样式，减小左右边距相关影响 */
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  color: #101214;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.54;
-  background-color: #a0a0a08e; 
+
+/* 添加容器作用域 */
+.research-news-section {
+    /* 保持原有body样式但限定在容器内 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: auto;
+    margin: 8px 15px;
+    color: #101214;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.54;
+    background-color: rgb(217, 219, 222);
 }
 
-.block__title {
-  text-align: center;
-  color: #00205b;
-  font-size: 28px; 
-  margin-bottom: 10px; /* 减少标题底部外边距，可按需调整 */
-  margin-top: 60px;
+.research-news-section .block__title {
+    text-align: center;
+    color: #00205b;
+    font-size: 32px;
+    margin-bottom: 10px;
+    margin-top: 60px;
 }
 
-.sectioning-block h2 {
-  margin: 0 0 26px; /* 合并重复的 margin 设置 */
-  padding: 0;
-  border: 0;
-  text-align: center;
-  color: #00205b;
-  font: 500 20px / 1.25 "Lora", "Noto Sans JP", serif; /* 假设前面添加的字体样式保留 */
+/* 其他所有样式规则都需要添加.research-news-section前缀 */
+.research-news-section .sectioning-block h2 {
+    margin: 0 0 26px;
+    padding: 0;
+    border: 0;
+    text-align: center;
+    color: #00205b;
+    font: 500 28px / 1.25 "Lora", "Noto Sans JP", serif;
 }
 
-.node-list__title {
+/* 以此类推，为所有样式规则添加.research-news-section前缀 */
+.research-news-section .node-list__title {
   margin: 6px 0 0;
   padding: 0;
   border: 0;
-  font-size: 15px;
+  /* 增大字体大小，可根据需求调整 */
+  font-size: 20px; 
   font-weight: 650;
   line-height: 24px;
   color: black;
+  text-align: left; 
 }
 
 /* 修改 .article-sub-list__items 的 flex-wrap 属性 */
-.article-sub-list__items {
+.research-news-section .article-sub-list__items {
   /* 保持原有样式，确保弹性布局 */
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
-  flex-wrap: wrap; /* 允许弹性项换行 */
+  /* 默认情况下禁止换行 */
+  flex-wrap: nowrap; 
   justify-content: center;
   width: 100%;
   max-width: 1200px;
@@ -59,14 +66,14 @@ body {
 }
 
 /* 让 .node-list__content 内的文字靠左 */
-.node-list__content {
+.research-news-section  .node-list__content {
   text-align: left; /* 修改文字对齐方式 */
   width: 100%;
   font-size: 14px; 
 }
 
 /* 让 .node-list__title 内的文字靠左 */
-.node-list__title {
+.research-news-section .node-list__title {
   margin: 6px 0 0;
   padding: 0;
   border: 0;
@@ -77,7 +84,7 @@ body {
   text-align: left; /* 修改文字对齐方式 */
 }
 
-.article-sub-list__item img {
+.research-news-section .article-sub-list__item img {
   /* 让图片宽度和高度占满父容器 */
   width: 100%;
   height: 100%;
@@ -89,22 +96,22 @@ body {
 }
 
 .article-sub-list__item:hover img,
-.node-list__link:hover ~ img {
+.research-news-section .node-list__link:hover ~ img {
   transform: scale(1.10);
 }
 
-.node-list__link {
+.research-news-section .node-list__link {
   text-decoration: none;
   color: black;
   transition: transform 0.3s ease; /* 添加过渡效果 */
 }
 
-.node-list__link:hover {
+.research-news-section .node-list__link:hover {
   text-decoration: none; /* 移除悬停时的下划线 */
   transform: scale(1.02); /* 鼠标悬停时放大文字 */
 }
 
-.more-link {
+.research-news-section .more-link {
   position: relative;
   color: white;
   background-color: rgb(0, 40, 114); 
@@ -120,7 +127,7 @@ body {
   font-size: 15px;
 }
 
-.more-link::before {
+.research-news-section .more-link::before {
   content: "";
   position: absolute;
   top: 0;
@@ -133,21 +140,20 @@ body {
   z-index: -1; 
 }
 
-.more-link:hover::before {
+.research-news-section .more-link:hover::before {
   width: 100%; 
 }
 
-.more-link:hover {
+.research-news-section .more-link:hover {
   color: rgb(0, 40, 114); 
 }
 
-.article-sub-list__item {
+.research-news-section .article-sub-list__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   background-color: white;
-  /* 将顶部内边距设置为 0 */
   padding: 0 30px 30px 30px; 
   border-radius: 0;
   width: calc(25% - 10px); 
@@ -158,49 +164,41 @@ body {
   overflow: hidden; 
 }
 
-.article-sub-list__item img {
-  width: 100%;
+.research-news-section .article-sub-list__item img {
+  /* 确保图片宽度为父容器宽度减去左右内边距 */
+  width: calc(100% + 60px); 
+  /* 让图片相对于父容器左移 30px 来贴紧左边框 */
+  margin-left: -30px; 
   height: 100%;
   object-fit: cover; 
-  border-radius: 8px;
+  /* 将 border-radius 设置为 0 以实现 90 度角 */
+  border-radius: 0;
   margin-top: 0;
   transition: transform 0.3s ease; 
 }
 
-/* 调整不同窗口宽度下的方框宽度和间距 */
-@media (max-width: 1200px) {
-  .article-sub-list__item {
-    /* 增加响应式下的宽度 */
-    width: calc(40% - 10px); 
-    margin: 20px 15px; 
-  }
-}
-
-@media (max-width: 1024px) {
-  .article-sub-list__item {
-    /* 增加响应式下的宽度 */
-    width: calc(60% - 10px); 
-    margin: 20px 15px; 
-  }
-}
-
+/* 小屏幕下启用弹性换行 */
 @media (max-width: 768px) {
-  .article-sub-list__item {
-    /* 增加响应式下的宽度 */
-    width: calc(80% - 10px); 
+  .research-news-section .article-sub-list__items {
+    /* 小屏幕下允许换行 */
+    flex-wrap: wrap; 
+  }
+
+  .research-news-section .article-sub-list__item {
+    /* 小屏幕下设置合适的宽度 */
+    width: calc(50% - 30px); 
     margin: 20px 15px; 
   }
 }
 
 @media (max-width: 480px) {
-  .article-sub-list__item {
-    /* 增加响应式下的宽度 */
-    width: calc(100% - 40px); 
-    margin: 20px 15px; 
+  .research-news-section .article-sub-list__item {
+    /* 更小屏幕下每个元素占满一行 */
+    width: calc(100% - 30px); 
   }
 }
 
-ul {
+.research-news-section ul {
   display: block;
   list-style-type: disc;
   margin-block-start: 1em;
@@ -212,30 +210,44 @@ ul {
 }
 
 @media (min-width: 48em) {
-  .sectioning-block > h2 {
+  .research-news-section .sectioning-block > h2 {
     font-size: 24px;
     line-height: 31px;
   }
 }
 
 /* 为 .node-list__title 添加悬停下划线 */
-.node-list__title:hover {
+.research-news-section .node-list__title:hover {
   text-decoration: underline;
 }
 
 /* 定义水平线样式 */
-.full-width-line {
-  width: 100%; /* 让线贯穿整行 */
-  border: none; /* 移除默认边框 */
-  border-top: 1px solid rgba(51, 101, 192, 0.445); /* 设置顶部边框作为线，颜色可按需修改 */
-  margin: 40px 0; /* 设置上下外边距，可按需调整 */
+.research-news-section .full-width-line {
+  display: block; 
+  /* 让元素脱离文档流，相对于视口定位 */
+  position: absolute; 
+  left: 0;
+  right: 0;
+  border: none; 
+  border-top: 1px solid rgba(51, 101, 192, 0.445); 
+  /* 调整上下外边距 */
+  margin: 40px 0; 
 }
 
 /* 移除特定类超链接的默认样式 */
-.full-width-divider {
-  width: 100%; 
+.research-news-section .full-width-divider {
+  display: block; 
+  /* 让元素脱离文档流，相对于视口定位 */
+  position: absolute; 
+  left: 0;
+  right: 0;
   height: 1px; 
   background-color: #000; 
-  margin-top: 10px; /* 减少线的顶部外边距，可按需调整 */
-  margin-bottom: 20px; 
+  /* 调整上下外边距 */
+  margin: 10px 0 20px 0; 
+}
+
+.research-news-section .field--name-field-publication-date {
+    /* 给日期区域上方添加 1em 的外边距，你可以根据需要调整这个值 */
+    margin-top: 1em; 
 }
